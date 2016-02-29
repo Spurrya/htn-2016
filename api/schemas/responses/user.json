@@ -1,0 +1,39 @@
+  {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+
+      "type": "object",
+
+      "properties":
+      {
+          "success":   { "type": "boolean" },
+          "code":      { "type": "integer" },
+          "status":    { "type": "string" },
+          "data":
+          {
+              "type": "array",
+              "items":
+              [
+                  {
+                      "type": "object",
+                      "properties":
+                      {
+                          "name":          { "type": "string" },
+                          "picture":       { "type": "string" },
+                          "company":       { "type": "string" },
+                          "email":         { "type": "string" },
+                          "phone":         { "type": "number" },
+                          "latitude":      { "type": "number" },
+                          "longitude":     { "type": "number" },
+                          "skills":        [{
+                            "name":         { "type": "string" },
+                            "rating":        { "type": "number" }
+                          }
+                          ]
+                      }
+                  }
+              ]
+          },
+          "errors":    { "type": "array" }
+      },
+      "required": ["success", "code", "status"]
+  }
